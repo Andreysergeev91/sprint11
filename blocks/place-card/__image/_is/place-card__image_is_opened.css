@@ -1,0 +1,11 @@
+.place-card__image_is_opened {
+  max-height: 80vh;
+  max-width: 80vw;
+  background-size: cover;
+  background-position: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+
+}

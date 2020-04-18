@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mesto</title>
+  <link rel="stylesheet" href="./pages/index.css">
+</head>
+
+<body>
+  <div class="root">
+    <header class="header root__section">
+      <img src="./images/logo.svg" alt="mesto logo" class="logo">
+    </header>
+    <div class="profile root__section">
+      <div class="user-info">
+        <div class="user-info__photo"></div>
+        <div class="user-info__data">
+          <h1 class="user-info__name"></h1>
+          <p class="user-info__job"></p>
+          <button class="button button-edit">Edit</button>
+        </div>
+        <button class="button user-info__button">+</button>
+      </div>
+    </div>
+    <div class="places-list root__section">
+    </div>
+    <div class="popup popup_type_add-card">
+      <div class="popup__content popup__content_type_add-card">
+        <img src="./images/close.svg" alt="" class="popup__close popup__close_type_add-card">
+        <h3 class="popup__title popup__title_type_add-card ">Новое место</h3>
+        <form class="popup__form popup__form_type_add-card" name="new" novalidate>
+          <input type="text" name="name" required minlength="2" class="popup__input popup__input_type_name"
+            placeholder="Название">
+          <p class="error-message error-message_type_input-card-name">Это обязательное поле</p>
+          <input name="link" required type="url" class="popup__input popup__input_type_link-url"
+            placeholder="Ссылка на картинку">
+          <p class="error-message error-message_type_input-link">Это обязательное поле</p>
+
+          <button type class="button popup__button popup__button_type_add-card button-inactive" disabled>+</button>
+        </form>
+      </div>
+    </div>
+    <div class="popup popup_type_edit">
+      <div class="popup__content popup__content_type_edit">
+        <img src="./images/close.svg" alt="" class="popup__close popup__close_type_edit">
+        <h3 class="popup__title popup__title_type_edit">Редактировать профиль</h3>
+        <form class="popup__form popup__form_type_edit" name="edit" novalidate>
+          <input type="text" name="user" class="popup__input popup__input_type_user" required minlength="2" size="40"
+            placeholder="Имя" value="Jaques Causteau">
+          <p class="error-message error-message_type_input-name">Это обязательное поле</p>
+
+          <input type="text" name="about" minlength="2" size="40" class="popup__input popup__input_type_about" required
+            placeholder="О себе" value="Sailor, Researcher">
+          <p class="error-message error-message_type_input-about">Это обязательное поле</p>
+          <button type class="button popup__button popup__button_type_edit">+</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script class="initial-cards" src="./js/initialCards.js"></script>
+  <script class="card" src="./js/Сard.js"></script>
+  <script class="cardList" src="./js/СardList.js"></script>
+  <script class="popup" src="./js/Popup.js"></script>
+  <script class="userInfo" src="./js/UserInfo.js"></script>
+  <script class="form-validator" src="./js/FormValidator.js"></script>
+  <script class="api" src="./js/api.js"></script>
+  <script type="text/javascript" src="js/script.js"></script>
+
+</body>
+
+</html>

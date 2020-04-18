@@ -1,0 +1,15 @@
+
+.place-card-opened__image {
+  min-width: 50vw;
+  min-height: 50vh;
+
+  max-width: 80vw;
+  max-height: 80vh;
+  background-size:contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  position: relative;
+}
+

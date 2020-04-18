@@ -1,0 +1,11 @@
+@import url(./is_closed/place-card__description_is_closed.css);
+
+.place-card__description {
+  display: flex;
+  min-height: 78px;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  padding: 0 22px;
+}
+

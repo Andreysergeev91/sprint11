@@ -1,0 +1,19 @@
+.error-message {
+    color: red;
+    display: none;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 0 0 0 0;
+    position: relative;
+    bottom: 20px;
+}
+
+.error-message:nth-of-type(2) {
+    position: static;
+    margin: 4px 0 0 0;
+}
+
+.error-message:nth-of-type(4) {
+    position: static;
+    margin: 4px 0 0 0;
+}
