@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-// подключаем плагин
 const WebpackMd5Hash = require('webpack-md5-hash');
 const isDev = process.env.NODE_ENV === 'development';
 
@@ -34,7 +33,7 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif|ico|svg)$/,
                 use: [
-                        'file-loader?name=../images/[name].[ext]', // указали папку, куда складывать изображения
+                        'file-loader?name=../images/[name].[ext]', 
                         {
                                 loader: 'image-webpack-loader',
                                 options: {}
@@ -63,11 +62,11 @@ module.exports = {
             'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
         new HtmlWebpackPlugin({
-            // Означает, что:
-            inject: false, // стили НЕ нужно прописывать внутри тегов
             
-            template: './src/index.html', // откуда брать образец для сравнения с текущим видом проекта
-            filename: 'index.html' // имя выходного файла, то есть того, что окажется в папке dist после сборки
+            inject: false, 
+            
+            template: './src/index.html', 
+            filename: 'index.html' 
         }),
         new WebpackMd5Hash()
     ]
