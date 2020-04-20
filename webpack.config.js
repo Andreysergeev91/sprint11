@@ -65,7 +65,7 @@ module.exports = {
             
             inject: false, 
             
-            template: './src/index.html', 
+            template: './template/index.html', 
             filename: 'index.html' 
         }),
         new WebpackMd5Hash()
