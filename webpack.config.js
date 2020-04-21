@@ -12,7 +12,7 @@ module.exports = {
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
-         filename: '[name].[chunkhash].js'
+        filename: '[name].[chunkhash].js'
     },
     module: {
         rules: [{
@@ -33,13 +33,13 @@ module.exports = {
             {
                 test: /\.(png|jpg|gif|ico|svg)$/,
                 use: [
-                        'file-loader?name=./images/[name].[ext]', 
-                        {
-                                loader: 'image-webpack-loader',
-                                options: {}
-                        },
+                    'file-loader?name=./images/[name].[ext]',
+                    {
+                        loader: 'image-webpack-loader',
+                        options: {}
+                    },
                 ]
-         },
+            },
             {
                 test: /\.(eot|ttf|woff|woff2)$/,
                 loader: 'file-loader?name=./vendor/[name].[ext]'
@@ -62,11 +62,11 @@ module.exports = {
             'NODE_ENV': JSON.stringify(process.env.NODE_ENV)
         }),
         new HtmlWebpackPlugin({
-            
-            inject: false, 
-            
-            template: './template/index.html', 
-            filename: 'index.html' 
+
+            inject: false,
+
+            template: './index.html',
+            filename: 'index.html'
         }),
         new WebpackMd5Hash()
     ]
