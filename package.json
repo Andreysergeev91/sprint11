@@ -1,7 +1,7 @@
 {
   "name": "sprint11",
   "version": "1.0.0",
-  "description": "",
+  "description": "The project is intended to study application of module bundler Webpack as well as its plugins and loaders.",
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production rimraf dist && webpack --mode production",
@@ -43,5 +43,8 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "core-js": "^3.4.1"
-  }
+  },
+  "browserslist": [
+    "defaults"
+  ]
 }

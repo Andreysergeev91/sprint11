@@ -13,6 +13,7 @@ const popupEdit = new Popup(document.querySelector('.popup_type_edit'));
 const userInfo = new UserInfo(document.querySelector('.user-info__name'), document.querySelector('.user-info__job'), document.querySelector('.user-info__photo'));
 const formEditValidation = new FormValidator(popupEdit.popupElement.querySelector('.popup__form_type_edit'));
 const formAddCardvalidation = new FormValidator(popupAddForm);
+const isDev = process.env.NODE_ENV === 'development';
 
 const buttonAdd = document.querySelector('.user-info__button');
 
@@ -22,18 +23,22 @@ function openImageCallback(event) {
     if (event.target.classList.contains('place-card__image')) {
         const clonePlaceCard = event.target.parentNode.cloneNode(true);
         const imagePopup = clonePlaceCard.querySelector('.place-card__image');
-        const imagePopupClose = clonePlaceCard.querySelector('.place-card__delete-icon');
+        const imagePopupClose = document.createElement('button');
         clonePlaceCard.removeChild(clonePlaceCard.lastChild);
         clonePlaceCard.classList.toggle('place-card-opened');
         imagePopup.classList.remove('place-card__image');
         imagePopup.classList.add('place-card-opened__image');
+        imagePopup.appendChild(imagePopupClose);
         imagePopupClose.classList.add('place-card-opened__delete-icon');
+        imagePopupClose.classList.add('place-card__delete-icon');
         document.querySelector('.places-list').appendChild(clonePlaceCard);
-        clonePlaceCard.querySelector('.place-card__delete-icon').addEventListener('click', this.remove);
+        clonePlaceCard.querySelector('.place-card__delete-icon').addEventListener('click', () => {
+            clonePlaceCard.parentNode.removeChild(clonePlaceCard);
+        });
     }
 }
 
-const api = new Api('https://praktikum.tk/cohort9', {
+const api = new Api(isDev ? 'http://praktikum.tk/cohort9' : 'https://praktikum.tk/cohort9', {
 
     headers: {
         authorization: '2d226d6f-a322-47bc-a2db-869e1d9f78b6',

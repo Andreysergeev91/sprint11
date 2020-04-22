@@ -1,14 +1,14 @@
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const path = require('path');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const isDev = process.env.NODE_ENV === 'development';
 
 module.exports = {
     entry: {
-        main: './js/index.js'
+        main: './src/js/index.js'
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -26,7 +26,12 @@ module.exports = {
                 test: /\.css$/i,
                 use: [
                     (isDev ? 'style-loader' : MiniCssExtractPlugin.loader),
-                    'css-loader',
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            importLoaders: 2
+                        }
+                    },
                     'postcss-loader'
                 ]
             },
@@ -65,7 +70,7 @@ module.exports = {
 
             inject: false,
 
-            template: './index.html',
+            template: './src/index.html',
             filename: 'index.html'
         }),
         new WebpackMd5Hash()
