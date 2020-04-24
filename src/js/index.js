@@ -13,7 +13,8 @@ const popupEdit = new Popup(document.querySelector('.popup_type_edit'));
 const userInfo = new UserInfo(document.querySelector('.user-info__name'), document.querySelector('.user-info__job'), document.querySelector('.user-info__photo'));
 const formEditValidation = new FormValidator(popupEdit.popupElement.querySelector('.popup__form_type_edit'));
 const formAddCardvalidation = new FormValidator(popupAddForm);
-const isDev = process.env.NODE_ENV === 'development';
+const isDev = NODE_ENV === 'development';
+
 
 const buttonAdd = document.querySelector('.user-info__button');
 
