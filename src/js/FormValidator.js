@@ -4,13 +4,14 @@ export default class FormValidator {
         this.form.addEventListener('input', () => {
             this.setEventListeners();
         });
+        this.words = {
+            validationLenght: 'Должно быть от 2 до 30 символов',
+            urlValidation: 'Здесь должна быть ссылка'
+        };
+
     }
 
-    words = {
-        validationLenght: 'Должно быть от 2 до 30 символов',
-        urlValidation: 'Здесь должна быть ссылка'
 
-    };
 
     checkInputValidity(input, errorElement) {
         const {
