@@ -39,7 +39,7 @@ function openImageCallback(event) {
     }
 }
 
-const api = new Api(isDev ? 'http://praktikum.tk/cohort9' : 'https://praktikum.tk/cohort9', {
+const api = new Api(isDev ? 'http://nomoreparties.co/cohort9' : 'https://nomoreparties.co/cohort9', {
 
     headers: {
         authorization: '2d226d6f-a322-47bc-a2db-869e1d9f78b6',
